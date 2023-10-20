@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import Navbar from './components/Navbar';
+import SearchBar from './components/SearchBar';
+import ProductList from './components/ProductList';
 
 function App() {
+  const [products, setProducts] = useState([]);
+
+  const handleSearch = (query) => {
+    const apiUrl = `http://localhost:5000/api/products?query=${query}`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            setProducts(data);
+        })
+        .catch(error => {
+            console.error("There was an error fetching the products!", error);
+        });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <SearchBar onSearch={handleSearch} />
+      <ProductList products={products} />
     </div>
   );
 }
 
 export default App;
+
