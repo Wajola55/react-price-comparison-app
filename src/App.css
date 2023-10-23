@@ -13,6 +13,17 @@
   }
 }
 
+@font-face {
+  font-family: 'CustomNavbarFont';
+  src: url('/public/fonts/FiraMono-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CustomGlobalFont';
+  src: url('/public/fonts/FiraMono-Regular.ttf') format('truetype');
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

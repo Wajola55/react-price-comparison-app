@@ -3,21 +3,14 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import SearchBar from './components/SearchBar';
 import ProductList from './components/ProductList';
+import './App.css'
 
 function App() {
   const [products, setProducts] = useState([]);
 
-  const handleSearch = (query) => {
-    const apiUrl = `http://localhost:5000/api/products?query=${query}`;
+  const handleSearch = (data) => {
+    setProducts(data);
 
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            setProducts(data);
-        })
-        .catch(error => {
-            console.error("There was an error fetching the products!", error);
-        });
   };
 
   return (
