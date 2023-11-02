@@ -1,8 +1,8 @@
 .navbar {
-    background-image: url('/public/img/background.png');
-    background-size: cover;
+    background-image: url('/public/img/bank.png');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
+    opacity: 0.9;
     color: #fff;
     padding: 40px 50px;
     text-align: center;
@@ -14,4 +14,5 @@
 .navbar h1 {
     color: rgb(197, 125, 57);
     font-family: 'CustomNavbarFont';
+    font-size: 60px;
 }

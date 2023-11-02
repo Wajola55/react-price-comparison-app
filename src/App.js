@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import SearchBar from './components/SearchBar';
 import ProductList from './components/ProductList';
+import Intro from './components/Intro';
+import Categories from './components/Categories';
 import './App.css'
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <Categories />
+      <Intro />
       <SearchBar onSearch={handleSearch} />
       <ProductList products={products} />
     </div>
