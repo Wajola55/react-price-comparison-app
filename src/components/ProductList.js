@@ -1,14 +1,25 @@
-
 import React from 'react';
 import './ProductList.css';
 
 function ProductList({ products }) {
+    // Check if products is undefined or null
+    if (!products) {
+        return <div>No products found or there was an error fetching the products.</div>;
+    }
+    
+    // Check if products is an empty array
+    if (products.length === 0) {
+        return <div>No products match the search criteria.</div>;
+    }
+    
+    // Log the products to the console
     console.log(products);
+
     return (
         <div className="product-list">
             {products.map((product, index) => (
                 <div key={index} className="product-item">
-                    <img src={product.images.default} alt={product.title} className="product-image"/>
+                    <img src={product.images.default} alt={product.title} className="product-image" />
 
                     <div className="product-details">
                         <span className="product-name">{product.title}</span>
@@ -39,8 +50,5 @@ function ProductList({ products }) {
     );
 }
 
-
-
-
-
 export default ProductList;
+
