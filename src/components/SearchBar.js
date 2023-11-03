@@ -7,7 +7,7 @@ const TOKEN = process.env.REACT_APP_API_TOKEN;
 
 function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
-  const [sortOrder, setSortOrder] = useState('asc'); // 'asc' for ascending, 'desc' for descending
+  const [sortOrder, setSortOrder] = useState('asc');
   const [priceFrom, setPriceFrom] = useState('');
   const [priceTo, setPriceTo] = useState('');
 
@@ -25,7 +25,7 @@ function SearchBar({ onSearch }) {
       ],
       page: 1,
       page_size: 50,
-      ordering: ordering // Add the ordering parameter to the request body
+      ordering: ordering
     };
 
     fetch(API_URL, {
@@ -39,7 +39,7 @@ function SearchBar({ onSearch }) {
     .then(response => response.json())
     .then(data => {
       console.log("Fetched products:", data.data);
-      onSearch(data.data); // No need to sort on the frontend, API does it
+      onSearch(data.data);
     })
     .catch(error => {
       console.error('Error fetching data:', error);

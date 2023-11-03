@@ -12,7 +12,7 @@ function ProductList({ products }) {
         return <div>No products match the search criteria.</div>;
     }
     
-    // Log the products to the console
+    // Display the products
     console.log(products);
 
     return (
