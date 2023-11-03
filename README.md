@@ -1,33 +1,36 @@
 ## Product Price Comparison Platform
 
-![01 main](https://github.com/Wajola55/react-price-comparison-app/assets/118658753/484f932c-8f37-400b-93a3-4b5719031ab2)
+![01 main](https://github.com/Wajola55/react-price-comparison-app/assets/118658753/c31ee0be-3253-40a0-9083-de920446cb3a)
 
-A modern, intuitive platform that assists users in comparing product prices across various online retailers. Built with the power of React on the frontend and Express.js on the backend, this application offers a seamless experience to users looking for the best prices online.
+A modern, intuitive platform that assists users in comparing product prices across various online retailers. Built with the power of React on the frontend and Express.js on the backend, this application offers a seamless experience to users looking for the best deals online.
 
 ### Features
-1.Search & Display: Search for a product and see a list of offerings from different retailers, allowing users to visually compare prices at a glance.
 
-2.Price Filters: Allows users to filter results based on a specific price range.
+<li>Search & Display: Search for products and see a comprehensive list of offerings from different retailers, allowing users to compare prices at a glance.
 
-3.Responsive Grid Layout: Products are displayed in a grid layout, which adjusts based on screen size for an optimized viewing experience on desktop, tablet, or mobile.
+<li>Price Filters: Provides the ability for users to filter search results within a specified price range, enhancing the search precision.
+
+<li>Responsive Grid Layout: A grid layout that adjusts to screen size ensures an optimized viewing experience across desktop, tablet, and mobile devices.
+
+### Newly Released Features
+
+<li>Price Sorting: Users can now sort products based on price in ascending or descending order, thanks to the recent updates.
 
 ### Upcoming Features
-1.Price Sorting: Users will soon be able to sort products based on ascending or descending prices.
 
-2.Retailer Reviews: A section detailing user reviews for various online retailers, ensuring that users not only get the best price but also buy from reputable sources.
 
-3.Daily Deals and Alerts: A system to alert users about daily deals or when a product falls below a certain price point.
-
-4.User Profiles & Customization: Users will have the option to create profiles, save favorite products, and set customized price alerts.
+<li>User Profiles & Customization: Future updates will allow users to create profiles, save favorite products, and set personalized price alerts.
 
 ### Development
 
-This project is in active development. Contributions, feedback, and suggestions are welcome.
+This project is in active development. Contributions, feedback, and suggestions are highly encouraged and appreciated.
 Getting Started
 
-### Clone the repository:
+To contribute or set up this project locally, you can follow these steps:
 
-    <code>bash</code>
 
 <code>git clone [repository_url]</code>
 
+Replace [repository_url] with the actual URL of the repository.
+
+For more detailed setup instructions, please refer to the documentation in the repository.
