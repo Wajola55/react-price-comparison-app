@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './SearchBar.css';
 
 const API_URL = '/publisher/products/';
-const TOKEN = 'EapZX8C2hhjiF4JkP5LiJBA0ARMxui';
+const TOKEN = process.env.REACT_APP_API_TOKEN;
+
 
 function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
