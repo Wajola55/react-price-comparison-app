@@ -14,7 +14,7 @@ function SearchBar({ onSearch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Set the ordering parameter based on sortOrder
+    // Ordering parameter based on sortOrder
     const ordering = sortOrder === 'asc' ? 'price' : '-price';
 
     const requestBody = {
@@ -70,6 +70,8 @@ function SearchBar({ onSearch }) {
         value={priceTo}
         onChange={(e) => setPriceTo(e.target.value)}
       />
+      
+      
       <button type="submit">Search</button>
     </form>
   );

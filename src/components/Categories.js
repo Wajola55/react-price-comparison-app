@@ -1,30 +1,47 @@
-import React from 'react'
+import React from 'react';
 import './Categories.css';
 import home from '../images/home.png';
-import fashion from '../images/fashion.png';
-import fitness from '../images/fitness.png';
-import garden from '../images/garden.png';
-import beauty from '../images/beauty.png';
-import phone from '../images/phone.png';
+import ubrania from '../images/fashion.png';
+import zwierzeta from '../images/paw.png';
+import ogród from '../images/garden.png';
+import uroda from '../images/beauty.png';
+import dzieci from '../images/toys.png';
 
 
-const Categories = () => {
+const Categories = ({ onSelectCategory }) => {
+    const handleCategoryClick = (category) => {
+        console.log('Category selected:', category);
+        onSelectCategory(category);
+    };
+
     return (
         <div className='categories'>
-            <p className="category-item"><b>Dom i Wnętrze</b></p>
-            <img className="category-item" src={home} alt="home" />
-            <p className="category-item"><b>Ogród i Patio</b></p>
-            <img className="category-item" src={garden} alt="garden" />
-            <p className="category-item"><b>Odzież i Akcesoria</b></p>
-            <img className="category-item" src={fashion} alt="fasion"/>
-            <p className="category-item"><b>Zdrowie i Uroda</b></p>
-            <img className="category-item" src={beauty} alt="beauty"/>
-            <p className="category-item"><b>Sport i Rekreacja</b></p>
-            <img className="category-item" src={fitness} alt="fitness"/>
-            <p className="category-item"><b>Telefony i Gadżety</b></p>
-            <img className="category-item" src={phone} alt="phone"/>
+            <div className="category-item" onClick={() => handleCategoryClick('home')}>
+                <b>Dom i Wnętrze</b>
+                <img src={home} alt="home" />
+            </div>
+            <div className="category-item" onClick={() => handleCategoryClick('ubrania')}>
+                <b>Odzież i Akcesoria</b>
+                <img src={ubrania} alt="ubrania" />
+            </div>
+            <div className="category-item" onClick={() => handleCategoryClick('zwierzeta')}>
+                <b>Zwierzęta</b>
+                <img src={zwierzeta} alt="zwierzeta" />
+            </div>
+            <div className="category-item" onClick={() => handleCategoryClick('ogród')}>
+                <b>Ogród i Patio</b>
+                <img src={ogród} alt="ogród" />
+            </div>
+            <div className="category-item" onClick={() => handleCategoryClick('uroda')}>
+                <b>Zdrowie i Uroda</b>
+                <img src={uroda} alt="uroda" />
+            </div>
+            <div className="category-item" onClick={() => handleCategoryClick('dzieci')}>
+                <b>Dla dzieci</b>
+                <img src={dzieci} alt="dzieci" />
+            </div>
         </div>
-    )
-}
+    );
+};
 
 export default Categories;

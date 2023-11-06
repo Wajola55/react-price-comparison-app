@@ -4,10 +4,11 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     font-family: 'CustomGlobalFont';
 }
+
 
 .category-item {
     margin: 10px;
@@ -15,9 +16,22 @@
     margin-bottom: 10px;
     line-height: 1;
     font-size: 13px;
+    background-color: rgb(231, 168, 110);
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+    
+}
+
+.category-item:hover, .categoey-item:active {
+    cursor: pointer;
+    background-image: linear-gradient(to bottom, #e8d597, rgb(241, 159, 82));
+    font-size: 100%;
+
 }
 
 .category-item:last-child {
     margin-bottom: 0;
     margin-bottom: 5px;
+    
 }
