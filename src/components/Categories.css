@@ -16,7 +16,7 @@
     margin-bottom: 10px;
     line-height: 1;
     font-size: 13px;
-    background-color: rgb(231, 168, 110);
+    background: linear-gradient(135deg, rgba(255, 152, 88, 0.8) 0%, rgba(197,125,57,0.8) 100%);
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 
@@ -25,7 +25,7 @@
 
 .category-item:hover, .categoey-item:active {
     cursor: pointer;
-    background-image: linear-gradient(to bottom, #e8d597, rgb(241, 159, 82));
+    background-image: linear-gradient(to bottom, #fffdf7, rgb(255, 179, 108));
     font-size: 100%;
 
 }
