@@ -13,14 +13,14 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-family: 'CustomGlobalFont';
-    font-size: 18px;
+    font-size: 14px;
 
 }
 
 .search-bar button {
     padding: 15px 30px;
     border: none;
-    background-color: rgb(197, 125, 57);
+    background-color: #ec971f;
     color: #fff;
     cursor: pointer;
     border-radius: 4px;

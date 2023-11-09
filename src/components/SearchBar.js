@@ -4,9 +4,9 @@ import './SearchBar.css';
 const API_URL = '/publisher/products/';
 const TOKEN = process.env.REACT_APP_API_TOKEN;
 
-
 function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
+  const [brand, setBrand] = useState(''); // State to handle brand query
   const [sortOrder, setSortOrder] = useState('asc');
   const [priceFrom, setPriceFrom] = useState('');
   const [priceTo, setPriceTo] = useState('');
@@ -20,11 +20,12 @@ function SearchBar({ onSearch }) {
     const requestBody = {
       filters: [
         { title: { lookup: "contains", value: query } },
+        ...(brand ? [{ brand: { lookup: "contains", value: brand } }] : []), // Include brand filter if brand query is set
         ...(priceFrom ? [{ price: { lookup: "gt", value: priceFrom } }] : []),
         ...(priceTo ? [{ price: { lookup: "lt", value: priceTo } }] : [])
       ],
       page: 1,
-      page_size: 50,
+      page_size: 70,
       ordering: ordering
     };
 
@@ -54,6 +55,12 @@ function SearchBar({ onSearch }) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
+      <input
+        type="text"
+        placeholder="Find by brand ..."
+        value={brand}
+        onChange={(e) => setBrand(e.target.value)}
+      />
       <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
         <option value="asc">Sort by Price (Low to High)</option>
         <option value="desc">Sort by Price (High to Low)</option>
@@ -70,14 +77,13 @@ function SearchBar({ onSearch }) {
         value={priceTo}
         onChange={(e) => setPriceTo(e.target.value)}
       />
-      
-      
       <button type="submit">Search</button>
     </form>
   );
 }
 
 export default SearchBar;
+
 
 
 

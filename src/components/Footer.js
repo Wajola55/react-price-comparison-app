@@ -45,7 +45,3 @@ const Footer = () => {
 }
 
 export default Footer;
-
-
-/* <p>&copy; 2023 <b>Cenomat</b>.<img src="/bank.png" alt="Bank" width='30px' height='30px'/>
-  All rights reserved.</p> */

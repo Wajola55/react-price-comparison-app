@@ -51,8 +51,8 @@
 
 .product-link {
     padding: 8px 16px;
-    background-color: rgb(197, 125, 57);
-    color: #fff;
+    background: linear-gradient(135deg, rgba(248, 191, 155, 0.8) 0%, rgba(255, 197, 143, 0.8) 100%);
+    color: white;
     border-radius: 4px;
     text-decoration: none;
     font-family: 'CustomGlobalFonts';

@@ -1,18 +1,55 @@
 .navbar {
     background-image: url('/public/img/bank.png');
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
     opacity: 0.9;
+    margin-top: 20px;
     color: #fff;
-    padding: 40px 50px;
+    padding: 20px 50px;
     text-align: center;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between; 
     align-items: center;
+    flex-direction: row;
 }
 
 .navbar h1 {
     color: rgb(197, 125, 57);
-    font-family: 'CustomNavbarFont';
+    font-family: 'CustomNavbarFont', sans-serif;
     font-size: 60px;
+    margin: 0;
+}
+
+.sign-up-button {
+    background-color: #f0ad4e;
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;}
+
+.sign-up-button:hover,
+.sign-up-button:focus {
+    background-color: #ec971f;
+    outline: none;
+
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .navbar h1 {
+        margin-bottom: 20px;
+    }
+
+    .sign-up-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
 }
