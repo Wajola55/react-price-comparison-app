@@ -1,4 +1,5 @@
 footer {
+<<<<<<< HEAD
   width: 100%;
   background-color: #282c34;
   color: #ffffff;
@@ -26,6 +27,37 @@ footer {
   color: #ffffff;
   margin-top: 10px;
 }
+=======
+    width: 100%;
+    background: linear-gradient(135deg, rgba(231,101,20,0.8) 0%, rgba(197,125,57,0.8) 100%);
+    color: #ffffff; 
+    padding: 10px 10px; 
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-top: 50px;
+    border: 15px;
+    border-radius: 30px;
+
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+  }
+  
+  .col {
+    flex: 1;
+    padding: 0 15px; 
+    min-width: 200px;
+
+  }
+  
+  .email-id {
+    font-size: 0.9rem;
+    color: #ffffff;
+  }
+>>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
   
   @media (max-width: 768px) {
     .col {

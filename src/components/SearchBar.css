@@ -1,12 +1,18 @@
 .search-bar {
     width: 100%;
+<<<<<<< HEAD
     max-width: 800px;
     display: flex;
     align-items: center;
+=======
+    max-width: 800px; 
+    display: flex;
+>>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
     justify-content: center;
     margin: 30px auto;
 }
 
+<<<<<<< HEAD
 .search-bar input,
 .search-bar select {
     flex: 1;
@@ -55,3 +61,26 @@
 }
 
 
+=======
+.search-bar input {
+    flex: 1;
+    padding: 20px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'CustomGlobalFont';
+    font-size: 14px;
+
+}
+
+.search-bar button {
+    padding: 15px 30px;
+    border: none;
+    background-color: #ec971f;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'CustomGlobalFont';
+    font-size: 16px;
+}
+>>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
