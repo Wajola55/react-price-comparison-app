@@ -1,20 +1,19 @@
 .categories {
     display: flex;
-<<<<<<< HEAD
+
     flex-wrap: wrap;
     justify-content: space-around;
-=======
+
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
->>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
     align-items: center;
     margin-top: 30px;
     margin-bottom: 30px;
     font-family: 'CustomGlobalFont';
 }
 
-<<<<<<< HEAD
+
 .category-item {
     position: relative;
     display: flex;
@@ -67,14 +66,6 @@
 }
 
 
-
-
-
-
-
-
-=======
-
 .category-item {
     margin: 10px;
     padding: 1px;
@@ -100,4 +91,4 @@
     margin-bottom: 5px;
     
 }
->>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
+

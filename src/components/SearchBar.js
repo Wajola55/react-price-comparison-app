@@ -6,10 +6,8 @@ const TOKEN = process.env.REACT_APP_API_TOKEN;
 
 function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
-<<<<<<< HEAD
-=======
+
   const [brand, setBrand] = useState(''); // State to handle brand query
->>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
   const [sortOrder, setSortOrder] = useState('asc');
   const [priceFrom, setPriceFrom] = useState('');
   const [priceTo, setPriceTo] = useState('');
@@ -23,10 +21,7 @@ function SearchBar({ onSearch }) {
     const requestBody = {
       filters: [
         { title: { lookup: "contains", value: query } },
-<<<<<<< HEAD
-=======
         ...(brand ? [{ brand: { lookup: "contains", value: brand } }] : []), // Include brand filter if brand query is set
->>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
         ...(priceFrom ? [{ price: { lookup: "gt", value: priceFrom } }] : []),
         ...(priceTo ? [{ price: { lookup: "lt", value: priceTo } }] : [])
       ],
@@ -61,16 +56,12 @@ function SearchBar({ onSearch }) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-<<<<<<< HEAD
-
-=======
       <input
         type="text"
         placeholder="Find by brand ..."
         value={brand}
         onChange={(e) => setBrand(e.target.value)}
       />
->>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
       <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
         <option value="asc">Sort by Price (Low to High)</option>
         <option value="desc">Sort by Price (High to Low)</option>
@@ -81,20 +72,12 @@ function SearchBar({ onSearch }) {
         value={priceFrom}
         onChange={(e) => setPriceFrom(e.target.value)}
       />
-<<<<<<< HEAD
-
-=======
->>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
       <input 
         type="number" 
         placeholder="Price to" 
         value={priceTo}
         onChange={(e) => setPriceTo(e.target.value)}
       />
-<<<<<<< HEAD
-
-=======
->>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
       <button type="submit">Search</button>
     </form>
   );

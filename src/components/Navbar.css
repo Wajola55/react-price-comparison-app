@@ -1,5 +1,4 @@
 .navbar {
-<<<<<<< HEAD
     background-color: #282c34;
     padding: 20px;
     text-align: center;
@@ -21,7 +20,7 @@
     width: 80px;
     height: 80px;
     margin-right: 10px;
-=======
+
     background-image: url('/public/img/bank.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -34,54 +33,43 @@
     justify-content: space-between; 
     align-items: center;
     flex-direction: row;
->>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
 }
 
 .navbar h1 {
     color: rgb(197, 125, 57);
     font-family: 'CustomNavbarFont', sans-serif;
-<<<<<<< HEAD
     font-size: 24px;
     margin: 0;
     white-space: nowrap;
-=======
     font-size: 60px;
     margin: 0;
->>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
 }
 
 .sign-up-button {
     background-color: #f0ad4e;
     color: #fff;
-<<<<<<< HEAD
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-}
-=======
     padding: 10px 25px;
     border: none;
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease;}
->>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
 
 .sign-up-button:hover,
 .sign-up-button:focus {
     background-color: #ec971f;
     outline: none;
-<<<<<<< HEAD
     transform: scale(1.05);
 }
 
 
-=======
 
-}
 
 /* Responsive design */
 @media (max-width: 768px) {
@@ -99,4 +87,4 @@
         padding: 10px 20px;
     }
 }
->>>>>>> 01b5673fdfa8c9a1333969ca3a5bc3c575857a73
+
