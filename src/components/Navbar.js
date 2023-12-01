@@ -8,7 +8,7 @@ function Navbar() {
                 <h1>CENOMAT</h1>
                 <div className="logo-image"></div>
             </div>
-            <button className="sign-up-button" onClick={handleSignUpClick}>Sign Up</button>
+            <button className="sign-up-button" onClick={handleSignUpClick}>Zaloguj się</button>
         </div>
     );
 }

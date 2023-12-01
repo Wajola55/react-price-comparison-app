@@ -40,7 +40,7 @@ function ProductList({ products }) {
                         {/* clickable direct link */}
                         {product.direct_link && (
                             <a href={product.direct_link} target="_blank" rel="noopener noreferrer" className="product-link">
-                                View Product
+                                Zobacz produkt
                             </a>
                         )}
                     </div>
