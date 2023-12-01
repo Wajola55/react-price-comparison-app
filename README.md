@@ -1,13 +1,13 @@
 ### Product Price Comparison Platform
 
-![01 main](https://github.com/Wajola55/react-price-comparison-app/assets/118658753/0361368d-6322-485c-a1d9-69647f8bc58e)
+![01 main](https://github.com/Wajola55/react-price-comparison-app/assets/118658753/4bdb8e9d-59a4-48fd-b3e8-509e6a9d7c0c)
 
 
 A modern, intuitive platform that assists users in comparing product prices across various online retailers. Built with the power of React on the frontend and Express.js on the backend, this application offers a seamless experience to users looking for the best deals online.
 
 #### Footer:
 
-![footer](https://github.com/Wajola55/react-price-comparison-app/assets/118658753/1f2c9b24-d69c-469d-8022-9ec93db3ee95)
+![02 footer](https://github.com/Wajola55/react-price-comparison-app/assets/118658753/d67a4502-7941-4ebd-bda3-d9a753421871)
 
 #### Features
 
