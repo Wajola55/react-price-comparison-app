@@ -1,54 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ProductList.css';
 
+import ProductDetailsModal from './ProductDetailsModal';
+
 function ProductList({ products }) {
-    // Check if products is undefined or null
-    if (!products) {
-        return <div>No products found or there was an error fetching the products.</div>;
-    }
-    
-    // Check if products is an empty array
-    if (products.length === 0) {
-        return <div>No products match the search criteria.</div>;
-    }
-    
-    // Display the products
-    console.log(products);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
-    return (
-        <div className="product-list">
-            {products.map((product, index) => (
-                <div key={index} className="product-item">
-                    <img src={product.images.default} alt={product.title} className="product-image" />
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
+  };
 
-                    <div className="product-details">
-                        <span className="product-name">{product.title}</span>
-                        <span className="product-shop">{product.offer}</span>
-                        <span className="product-price">
-                            {product.sale_price && product.sale_price !== product.price ? (
-                                <>
-                                    <s>{product.price}</s>
-                                    <strong>{product.sale_price}</strong>
-                                </>
-                            ) : (
-                                product.price
-                            )}
-                        </span>
+  return (
+    <div className="product-list">
+      {products.map((product, index) => (
+        <div key={index} className="product-item" onClick={() => handleProductClick(product)}>
+          <img src={product.images.default} alt={product.title} className="product-image" />
 
-                        <span className="product-brand">{product.brand}</span>
+          <div className="product-details">
+            <span className="product-name">{product.title}</span>
+            <span className="product-shop">{product.offer}</span>
+            <span className="product-price">
+              {product.sale_price && product.sale_price !== product.price ? (
+                <>
+                  <s>{product.price}</s>
+                  <strong>{product.sale_price}</strong>
+                </>
+              ) : (
+                product.price
+              )}
+            </span>
 
-                        {/* clickable direct link */}
-                        {product.direct_link && (
-                            <a href={product.direct_link} target="_blank" rel="noopener noreferrer" className="product-link">
-                                Zobacz produkt
-                            </a>
-                        )}
-                    </div>
-                </div>
-            ))}
+            <span className="product-brand">{product.brand}</span>
+
+            {/* clickable direct link */}
+            {product.direct_link && (
+              <a href={product.direct_link} target="_blank" rel="noopener noreferrer" className="product-link">
+                Zobacz produkt
+              </a>
+            )}
+          </div>
         </div>
-    );
+      ))}
+
+      {/* Display ProductDetailsModal */}
+      {selectedProduct && <ProductDetailsModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+    </div>
+  );
 }
 
 export default ProductList;
+
+
 

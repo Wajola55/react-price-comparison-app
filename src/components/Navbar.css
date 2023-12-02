@@ -1,3 +1,7 @@
+/* Navbar.css */
+
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
 .navbar {
     background-color: #282c34;
     padding: 20px;
@@ -20,16 +24,6 @@
     width: 80px;
     height: 80px;
     margin-right: 10px;
-
-    opacity: 0.9;
-    margin-top: 20px;
-    color: #fff;
-    padding: 20px 50px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    flex-direction: row;
 }
 
 .navbar h1 {
@@ -38,8 +32,6 @@
     font-size: 24px;
     margin: 0;
     white-space: nowrap;
-    font-size: 60px;
-    margin: 0;
 }
 
 .sign-up-button {
@@ -51,14 +43,12 @@
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .sign-up-button:hover,
 .sign-up-button:focus {
     background-color: #ec971f;
     outline: none;
-    transform: scale(1.05);
 }
 
 .form-container {
@@ -77,28 +67,28 @@
     box-sizing: border-box;
 }
 
-.login-form .form-label,
-.signup-form .form-label {
+.form-label {
     margin-bottom: 10px;
     color: #333;
     font-weight: bold;
 }
 
-.login-form .form-input,
-.signup-form .form-input {
+.form-input {
     width: 100%;
+    height: 40px;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
-.login-form .form-button,
-.signup-form .form-button {
-    width: 100%;
-    padding: 10px;
+.form-button {
+    width: 50%;
+    height: 40px;
     background-color: #3498db;
+    margin-top: 38px;
+    margin-left: 10px;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -107,10 +97,8 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.login-form .form-button:hover,
-.login-form .form-button:focus,
-.signup-form .form-button:hover,
-.signup-form .form-button:focus {
+.form-button:hover,
+.form-button:focus {
     background-color: #2980b9;
     outline: none;
     transform: scale(1.05);
@@ -119,6 +107,9 @@
 .welcome-message {
     color: #333;
 }
+
+
+
 
 
 

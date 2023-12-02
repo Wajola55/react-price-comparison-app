@@ -68,8 +68,10 @@ function Navbar() {
 
             {authenticated ? (
                 <div>
-                    <p>Welcome, {username}!</p>
-                    <button onClick={handleLogout}>Logout</button>
+                    <p className="welcome-message">Welcome, {username}!</p>
+                    <button onClick={handleLogout} className="sign-up-button">
+                        Logout
+                    </button>
                 </div>
             ) : (
                 <div>
@@ -85,26 +87,34 @@ function Navbar() {
                             className={showLoginForm ? 'login-form' : 'signup-form'}
                             onSubmit={showLoginForm ? handleLoginSubmit : handleSignUpSubmit}
                         >
-                            <label>
-                                Login:
-                                <input
-                                    type="text"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    required
-                                />
-                            </label>
-                            <label>
-                                Hasło:
-                                <input
-                                    type="password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required
-                                />
-                            </label>
-                            <button type="submit">
-                                {showLoginForm ? 'Zaloguj się' : 'Zarejestruj się'}
+                            <div className="form-container">
+                                <div>
+                                    <label>
+                                        Login:
+                                        <input
+                                            type="text"
+                                            value={username}
+                                            onChange={(e) => setUsername(e.target.value)}
+                                            className="form-input"
+                                            required
+                                        />
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        Hasło:
+                                        <input
+                                            type="password"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                            className="form-input"
+                                            required
+                                        />
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" className="form-button">
+                                {showLoginForm ? 'Gotowe' : 'Gotowe'}
                             </button>
                         </form>
                     )}
@@ -115,10 +125,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
-
-
-
-
-
