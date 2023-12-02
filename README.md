@@ -17,12 +17,13 @@ A modern, intuitive platform that assists users in comparing product prices acro
 
 <li>Responsive Grid Layout: A grid layout that adjusts to screen size ensures an optimized viewing experience across desktop, tablet, and mobile devices.
 
-#### Newly Released Features
+<li>Price Sorting: Users can sort products based on price in ascending or descending order, thanks to the recent updates.
 
-<li>Price Sorting: Users can now sort products based on price in ascending or descending order, thanks to the recent updates.
+<li>Product Description Windows: Users can now view detailed product descriptions by clicking on the product items.
+
+![03 ProductDetails](https://github.com/Wajola55/react-price-comparison-app/assets/118658753/6d9567f5-044a-4c89-b465-c708b43eb7bb)
 
 #### Upcoming Features
-
 
 <li>User Profiles & Customization: Future updates will allow users to create profiles, save favorite products, and set personalized price alerts.
 
