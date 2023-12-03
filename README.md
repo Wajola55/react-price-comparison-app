@@ -45,5 +45,3 @@ To contribute or set up this project locally, you can follow these steps:
 <code>git clone [repository_url]</code>
 
 Replace [repository_url] with the actual URL of the repository.
-
-For more detailed setup instructions, please refer to the documentation in the repository.
