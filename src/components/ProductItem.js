@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProductItem.css';
 
-function ProductItem({ product }) {
+function ProductItem ({ product }) {
     return (
         <div className="product-item">
             <img src={product.images.default} alt={product.title} />
@@ -13,4 +13,3 @@ function ProductItem({ product }) {
 }
 
 export default ProductItem;
-

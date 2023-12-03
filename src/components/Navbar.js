@@ -1,127 +1,136 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import Categories from './Categories';
+import AuthForm from './AuthForm';
 import './Navbar.css';
 
-
 function Navbar() {
-    const [showLoginForm, setShowLoginForm] = useState(false);
-    const [showSignUpForm, setShowSignUpForm] = useState(false);
-    const [authenticated, setAuthenticated] = useState(false);
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+  const [showLoginForm, setShowLoginForm] = useState(false);
+  const [showSignUpForm, setShowSignUpForm] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
+  const [username, setUsername] = useState('');
+  const [notification, setNotification] = useState(null);
+  const [registrationSuccess, setRegistrationSuccess] = useState(false);
 
-    const handleSignUpClick = () => {
-        setShowLoginForm(false);
-        setShowSignUpForm(!showSignUpForm);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (formRef.current && !formRef.current.contains(event.target)) {
+        closeForms();
+      }
     };
 
-    const handleLoginClick = () => {
-        setShowSignUpForm(false);
-        setShowLoginForm(!showLoginForm);
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
     };
+  }, []);
 
-    const handleLoginSubmit = (e) => {
-        e.preventDefault();
+  const closeForms = () => {
+    setShowLoginForm(false);
+    setShowSignUpForm(false);
+    setNotification(null);
+    setRegistrationSuccess(false);
+  };
 
-        
-        const isValidUser = checkCredentials(username, password);
+  const handleSignUpClick = () => {
+    closeForms();
+    setShowSignUpForm(true);
+  };
 
-        if (isValidUser) {
-            console.log(`Logging in with username: ${username}`);
-            setAuthenticated(true);
-            setUsername(username);
-            setPassword('');
-            setShowLoginForm(false);
-            setShowSignUpForm(false);
-        } else {
-            console.error('Invalid username or password. Please try again.');
-        }
-    };
+  const handleLoginClick = () => {
+    closeForms();
+    setShowLoginForm(true);
+  };
 
-    const handleSignUpSubmit = (e) => {
-        e.preventDefault();
+  const handleAuthSubmit = ({ username, password, repeatPassword, email }) => {
 
-       
-        console.log(`Registering with username: ${username}`);
-       
-        setAuthenticated(true);
-        setUsername(username);
-        setPassword('');
-        setShowSignUpForm(false);
-        setShowLoginForm(true);
-    };
+    console.log({ username, password, repeatPassword, email });
 
-    const handleLogout = () => {
-        setAuthenticated(false);
-        setShowLoginForm(true);
-    };
+    // Check if passwords match
+    if (password !== repeatPassword && repeatPassword !== undefined) {
+      setNotification('Passwords do not match. Please try again.');
+      return;
+    }
 
-    const checkCredentials = (enteredUsername, enteredPassword) => {
-        return true;
-    };
+    // Set registration success
+    if (username && password && email) {
+      setAuthenticated(true);
+      setUsername(username);
+      closeForms();
+      setRegistrationSuccess(true);
+    }
+  };
 
-    return (
-        <div className="navbar">
-            <div className="logo-container">
-                <h1>CENOMAT</h1>
-                <div className="logo-image"></div>
-            </div>
+  const handleLogout = () => {
+    setAuthenticated(false);
+    closeForms();
+  };
 
-            {authenticated ? (
-                <div>
-                    <p className="welcome-message">Welcome, {username}!</p>
-                    <button onClick={handleLogout} className="sign-up-button">
-                        Logout
-                    </button>
-                </div>
-            ) : (
-                <div>
-                    <button className="sign-up-button" onClick={handleSignUpClick}>
-                        Zarejestruj się
-                    </button>
-                    <button className="sign-up-button" onClick={handleLoginClick}>
-                        Zaloguj się
-                    </button>
+  return (
+    <div className="navbar">
+      <div className="logo-container">
+        <h1>CENOMAT</h1>
+        <div className="logo-image"></div>
+      </div>
 
-                    {(showLoginForm || showSignUpForm) && (
-                        <form
-                            className={showLoginForm ? 'login-form' : 'signup-form'}
-                            onSubmit={showLoginForm ? handleLoginSubmit : handleSignUpSubmit}
-                        >
-                            <div className="form-container">
-                                <div>
-                                    <label>
-                                        Login:
-                                        <input
-                                            type="text"
-                                            value={username}
-                                            onChange={(e) => setUsername(e.target.value)}
-                                            className="form-input"
-                                            required
-                                        />
-                                    </label>
-                                </div>
-                                <div>
-                                    <label>
-                                        Hasło:
-                                        <input
-                                            type="password"
-                                            value={password}
-                                            onChange={(e) => setPassword(e.target.value)}
-                                            className="form-input"
-                                            required
-                                        />
-                                    </label>
-                                </div>
-                            </div>
-                            <button type="submit" className="form-button">
-                                {showLoginForm ? 'Gotowe' : 'Gotowe'}
-                            </button>
-                        </form>
-                    )}
-                </div>
-            )}
+      {authenticated ? (
+        <div>
+          <p className="welcome-message">Witaj, {username}!</p>
+          <button onClick={handleLogout} className="sign-up-button">
+            Wyloguj się
+          </button>
         </div>
-    );
+      ) : (
+        <div>
+          <button className="sign-up-button" onClick={handleSignUpClick}>
+            Zarejestruj się
+          </button>
+          <button className="sign-up-button" onClick={handleLoginClick}>
+            Zaloguj się
+          </button>
+
+          {(showLoginForm || showSignUpForm) && (
+            <>
+              <AuthForm
+                type={showLoginForm ? 'login' : 'signup'}
+                onSubmit={handleAuthSubmit}
+                onClose={closeForms}
+                notification={notification}
+              />
+            </>
+          )}
+        </div>
+      )}
+
+{registrationSuccess && (
+    <div className="modal-overlay">
+        <div className="modal registration-success">
+            <p>Rejestracja przebiegła pomyślnie, witamy na pokładzie!</p>
+            <button className="form-button" onClick={() => setRegistrationSuccess(false)}>
+                OK
+            </button>
+        </div>
+    </div>
+)}
+
+
+    
+      {!((showLoginForm || showSignUpForm) && <Categories />)}
+    </div>
+  );
 }
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+

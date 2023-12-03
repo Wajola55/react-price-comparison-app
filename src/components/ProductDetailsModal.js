@@ -7,7 +7,7 @@ function ProductDetailsModal({ product, onClose }) {
     <div className="product-details-modal">
       <div className="modal-content">
         <button className="close-button" onClick={onClose}>
-          Close
+          Zamknij
         </button>
         <div className="product-details-container">
           <div className="product-image-container">
