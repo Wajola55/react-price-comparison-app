@@ -1,4 +1,4 @@
-### Product Price Comparison Platform
+## Product Price Comparison Platform
 
 ![01 main](https://github.com/Wajola55/react-price-comparison-app/assets/118658753/fcfc1427-4bcc-45be-afe0-220edf1aaf73)
 
