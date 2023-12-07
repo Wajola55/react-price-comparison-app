@@ -1,6 +1,7 @@
 ## Product Price Comparison Platform
 
-![01 main](https://github.com/Wajola55/react-price-comparison-app/assets/118658753/fcfc1427-4bcc-45be-afe0-220edf1aaf73)
+
+![01 main](https://github.com/Wajola55/react-price-comparison-app/assets/118658753/96a1e458-9549-4222-a2dc-f09f90bd6fff)
 
 
 A modern, intuitive platform that assists users in comparing product prices across various online retailers. Built with the power of React on the frontend and Express.js on the backend, this application offers a seamless experience to users looking for the best deals online.
@@ -22,6 +23,14 @@ A modern, intuitive platform that assists users in comparing product prices acro
 
 #### New Features:
 
+#### Enhanced Favorite Products Display in Modal:
+
+<li>Toggle favorite products with a heart icon.
+<li>Revamp UI in FavoriteProductsModal.
+<li>Integrate loading gif for better user experience.
+
+![FavoriteProducts](https://github.com/Wajola55/react-price-comparison-app/assets/118658753/ac15b7a7-9158-4fc0-ba02-dfaa8a993f72)
+
 #### Enhanced Authentication Forms:
 
 <li>Registration & Login: Improved UI and functionality for a seamless user experience during registration and login.
@@ -29,6 +38,7 @@ A modern, intuitive platform that assists users in comparing product prices acro
 <li>Error Handling: Display clear error messages for users, such as password mismatch during registration.
 <li>Close Forms: Users can close authentication forms by clicking outside the form or using a dedicated close button.
 <li>Registration Success Message: A clean and stylish message notifies users upon successful registration.
+  
 
 #### Footer:
 
