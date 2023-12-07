@@ -1,7 +1,8 @@
 import React from 'react';
 import './FavoriteProductsModal.css';
+import binIcon from '../images/bin.png';
 
-function FavoriteProductsModal({ favoriteProducts, show, onClose }) {
+function FavoriteProductsModal({ favoriteProducts, show, onClose, onRemoveProduct }) {
   const modalStyle = {
     display: show ? 'block' : 'none',
   };
@@ -9,6 +10,10 @@ function FavoriteProductsModal({ favoriteProducts, show, onClose }) {
   if (!show) {
     return null;
   }
+
+  const handleRemoveProduct = (productId) => {
+    onRemoveProduct(productId);
+  };
 
   return (
     <div className="favorite-products-modal" style={modalStyle}>
@@ -36,6 +41,12 @@ function FavoriteProductsModal({ favoriteProducts, show, onClose }) {
                       </a>
                     )}
                   </div>
+                  <button
+                    className="remove-product-button"
+                    onClick={() => handleRemoveProduct(product.id)}
+                  >
+                    <img src={binIcon} alt="Remove" className="remove-product-icon" />
+                  </button>
                 </div>
               </li>
             ))}
@@ -47,6 +58,9 @@ function FavoriteProductsModal({ favoriteProducts, show, onClose }) {
 }
 
 export default FavoriteProductsModal;
+
+
+
 
 
 

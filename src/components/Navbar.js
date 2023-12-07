@@ -11,7 +11,7 @@ function Navbar({ favoriteProducts, setFavoriteProducts }) {
   const [username, setUsername] = useState('');
   const [notification, setNotification] = useState(null);
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
-  const [showFavoriteModal, setShowFavoriteModal] = useState(false); // New state
+  const [showFavoriteModal, setShowFavoriteModal] = useState(false);
   const formRef = useRef(null);
 
   useEffect(() => {
@@ -69,6 +69,12 @@ function Navbar({ favoriteProducts, setFavoriteProducts }) {
 
   const handleFavoritesClick = () => {
     setShowFavoriteModal(true);
+  };
+
+  const removeProduct = (productId) => {
+    setFavoriteProducts((prevProducts) =>
+      prevProducts.filter((product) => product.id !== productId)
+    );
   };
 
   return (
@@ -130,6 +136,7 @@ function Navbar({ favoriteProducts, setFavoriteProducts }) {
         favoriteProducts={favoriteProducts}
         show={showFavoriteModal}
         onClose={() => setShowFavoriteModal(false)}
+        onRemoveProduct={removeProduct}
       />
 
       {!((showLoginForm || showSignUpForm || showFavoriteModal) && <Categories />)}
@@ -138,6 +145,7 @@ function Navbar({ favoriteProducts, setFavoriteProducts }) {
 }
 
 export default Navbar;
+
 
 
 
