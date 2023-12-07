@@ -1,16 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Categories from './Categories';
 import AuthForm from './AuthForm';
+import FavoriteProductsModal from './FavoriteProductsModal';
 import './Navbar.css';
 
-function Navbar() {
+function Navbar({ favoriteProducts, setFavoriteProducts }) {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showSignUpForm, setShowSignUpForm] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   const [username, setUsername] = useState('');
   const [notification, setNotification] = useState(null);
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
-
+  const [showFavoriteModal, setShowFavoriteModal] = useState(false); // New state
   const formRef = useRef(null);
 
   useEffect(() => {
@@ -32,6 +33,7 @@ function Navbar() {
     setShowSignUpForm(false);
     setNotification(null);
     setRegistrationSuccess(false);
+    setShowFavoriteModal(false);
   };
 
   const handleSignUpClick = () => {
@@ -45,16 +47,13 @@ function Navbar() {
   };
 
   const handleAuthSubmit = ({ username, password, repeatPassword, email }) => {
-
     console.log({ username, password, repeatPassword, email });
 
-    // Check if passwords match
     if (password !== repeatPassword && repeatPassword !== undefined) {
-      setNotification('Passwords do not match. Please try again.');
+      setNotification('Hasła nie pasują do siebie. Proszę spróbuj ponownie.');
       return;
     }
 
-    // Set registration success
     if (username && password && email) {
       setAuthenticated(true);
       setUsername(username);
@@ -68,6 +67,10 @@ function Navbar() {
     closeForms();
   };
 
+  const handleFavoritesClick = () => {
+    setShowFavoriteModal(true);
+  };
+
   return (
     <div className="navbar">
       <div className="logo-container">
@@ -75,54 +78,71 @@ function Navbar() {
         <div className="logo-image"></div>
       </div>
 
-      {authenticated ? (
-        <div>
-          <p className="welcome-message">Witaj, {username}!</p>
-          <button onClick={handleLogout} className="sign-up-button">
-            Wyloguj się
-          </button>
-        </div>
-      ) : (
-        <div>
-          <button className="sign-up-button" onClick={handleSignUpClick}>
-            Zarejestruj się
-          </button>
-          <button className="sign-up-button" onClick={handleLoginClick}>
-            Zaloguj się
-          </button>
-
-          {(showLoginForm || showSignUpForm) && (
-            <>
-              <AuthForm
-                type={showLoginForm ? 'login' : 'signup'}
-                onSubmit={handleAuthSubmit}
-                onClose={closeForms}
-                notification={notification}
-              />
-            </>
-          )}
-        </div>
-      )}
-
-{registrationSuccess && (
-    <div className="modal-overlay">
-        <div className="modal registration-success">
-            <p>Rejestracja przebiegła pomyślnie, witamy na pokładzie!</p>
-            <button className="form-button" onClick={() => setRegistrationSuccess(false)}>
-                OK
+      <div>
+        {authenticated ? (
+          <div>
+            <p className="welcome-message">Witaj, {username}!</p>
+            <button onClick={handleLogout} className="sign-up-button">
+              Wyloguj się
             </button>
-        </div>
-    </div>
-)}
+          </div>
+        ) : (
+          <div>
+            <button className="sign-up-button" onClick={handleSignUpClick}>
+              Zarejestruj się
+            </button>
+            <button className="sign-up-button" onClick={handleLoginClick}>
+              Zaloguj się
+            </button>
 
+            {(showLoginForm || showSignUpForm) && (
+              <>
+                <AuthForm
+                  type={showLoginForm ? 'login' : 'signup'}
+                  onSubmit={handleAuthSubmit}
+                  onClose={closeForms}
+                  notification={notification}
+                />
+              </>
+            )}
 
-    
-      {!((showLoginForm || showSignUpForm) && <Categories />)}
+            <button className="favorites-button" onClick={handleFavoritesClick}>
+              Ulubione
+            </button>
+          </div>
+        )}
+
+        {registrationSuccess && (
+          <div className="modal-overlay">
+            <div className="modal registration-success">
+              <p>Rejestracja przebiegła pomyślnie, witamy na pokładzie!</p>
+              <img src="../img/welcome.gif" alt="Success Animation" />
+              <button className="form-button" onClick={() => setRegistrationSuccess(false)}>
+                OK
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Display FavoriteProductsModal as a separate modal */}
+      <FavoriteProductsModal
+        favoriteProducts={favoriteProducts}
+        show={showFavoriteModal}
+        onClose={() => setShowFavoriteModal(false)}
+      />
+
+      {!((showLoginForm || showSignUpForm || showFavoriteModal) && <Categories />)}
     </div>
   );
 }
 
 export default Navbar;
+
+
+
+
+
 
 
 

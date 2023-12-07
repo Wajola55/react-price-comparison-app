@@ -1,15 +1,49 @@
-import React from 'react';
-import './ProductItem.css';
+import ProductItem from './ProductItem';
 
-function ProductItem ({ product }) {
-    return (
-        <div className="product-item">
-            <img src={product.images.default} alt={product.title} />
-            <h2>{product.title}</h2>
-            <p>Shop: {product.offer}</p>
-            <p>Price: {product.price}</p>
-        </div>
-    );
+function ProductList({ products, onFavoriteToggle }) {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
+  };
+
+  return (
+    <div className="product-list">
+      {products.map((product) => (
+        <ProductItem
+          key={product.id}
+          product={product}
+          onProductClick={handleProductClick}
+          onHeartClick={onFavoriteToggle}
+        />
+      ))}
+
+
+      {/* Display ProductDetailsModal */}
+      {selectedProduct && <ProductDetailsModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />}
+    </div>
+  );
 }
 
-export default ProductItem;
+export default ProductList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

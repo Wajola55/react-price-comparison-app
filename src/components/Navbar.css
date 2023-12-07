@@ -137,6 +137,7 @@
 .registration-success p {
     margin-bottom: 20px;
     font-size: 18px;
+    font-weight: bold;
     font-family: 'CustomGlobalFont', sans-serif;
     color: #333;
 }
@@ -159,6 +160,29 @@
     transform: scale(1.05);
 }
 
+.registration-success img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.favorites-button {
+    background-color: #5bc0de;
+    color: #fff;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'CustomGlobalFont', sans-serif;
+    cursor: pointer;
+}
+
+.favorites-button:hover,
+.favorites-button:focus {
+    background-color: #46b8da;
+    outline: none;
+}
 
 
 
